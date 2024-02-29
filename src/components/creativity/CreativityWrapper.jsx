@@ -43,7 +43,7 @@ const CreativityWrapper = () => {
             </div> 
           </aside>
           <aside className="xs:w-[100%] sm:w-[75%] xs:h-[50vh] sm:h-[80vh] ">
-            <div className="xs:h-[350px] sm:h-min xs:bg-cover xs:w-[100%] relative bottom-[10%] xs:scale-100 sm:scale-[0.75] hover:scale-[0.8] transition-all duration-300 border-2 shadow-lg shadow-emerald-900 rounded-xl overflow-hidden">
+            <div className="xs:h-[350px] sm:h-min xs:bg-cover xs:w-[100%] relative bottom-[10%] xs:scale-100 sm:scale-[0.75] xs:hover:scale-100 sm:hover:scale-[0.8] transition-all duration-300 shadow-lg shadow-emerald-900 rounded-xl overflow-hidden">
               <ScrollTriggerDirectionalMovement />
             </div>
           </aside>
