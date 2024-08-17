@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
-import CreativityWrapper from "./creativity/CreativityWrapper";
 
 const Layout = () => {
   useEffect(() => {
@@ -18,7 +17,6 @@ const Layout = () => {
       <Navbar />
       <Home />
       <Projects />
-      <CreativityWrapper />
       <Contact />
       <Footer />
     </section>
