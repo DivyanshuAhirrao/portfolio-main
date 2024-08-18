@@ -19,9 +19,9 @@ const TextArea = () => {
         <div className="mb-2 block flex justify-between">
           <Label htmlFor="comment" value="Your Precious message : " />
           <button
-            className={`p-1 text-blue-600 border-2 border-blue-600 w-32 rounded-md transition-all duration-300 font-mono ${
+            className={`p-[2px] text-blue-600 border-2 border-[#1976D2] w-28 rounded-md transition-all duration-300 font-mono relative bottom-1 ${
               comment
-                ? "hover:bg-blue-600 hover:text-purple-300"
+                ? "hover:bg-[#1976D2] hover:text-purple-300 opacity-90"
                 : "opacity-40 cursor-not-allowed"
             }`}
             disabled={!comment}

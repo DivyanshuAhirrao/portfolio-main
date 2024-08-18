@@ -9,8 +9,11 @@ const ScrollBackgroundAnimation = () => {
 
     const tl = gsap.timeline({ paused: true });
 
-    tl.to(background, { duration: 1, backgroundColor: '#ab87cd80' }); // Change to your desired background color
-
+    tl.to(background, { duration: 0.2, backgroundColor: 'transparent' })    
+    .to(background, { duration: 0.2, backgroundColor: '#f5a38f' }) 
+    .to(background, { duration: 0.2, backgroundColor: '#c9f75f' }) 
+    .to(background, { duration: 0.2, backgroundColor: '#ab87cd80' }) 
+    
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollProgress = scrollTop / (document.documentElement.scrollHeight - window.innerHeight);
