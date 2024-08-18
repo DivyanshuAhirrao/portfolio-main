@@ -13,7 +13,6 @@ const Info = () => {
             typewriter
               .typeString("Myself Divyanshu Ahirrao !!")
               .callFunction(() => {
-                console.log("String typed out!");
               })
               .pauseFor(2500)
               .deleteAll()
