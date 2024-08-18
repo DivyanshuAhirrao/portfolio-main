@@ -3,7 +3,7 @@ import img1 from "../media/laptop-portfolio.png";
 import img2 from "../media/l-shopper.png";
 import img3 from "../media/l-delauxia.png";
 import img4 from "../media/l-notify.png";
-import img5 from "../media/l-roaminGo.png";
+import img5 from "../media/l-roamingo.png";
 
 import Lottie from "react-lottie";
 import projects from "../media/project.json";
