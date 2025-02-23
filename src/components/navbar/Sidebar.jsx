@@ -9,7 +9,6 @@ import Lottie from "react-lottie";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
-import connect from "../media/connect.json";
 import FormDialog from "./Subscribe";
 import { GoProjectSymlink } from "react-icons/go";
 import { TiHomeOutline } from "react-icons/ti";
@@ -22,14 +21,6 @@ export default function TemporaryDrawer() {
     setOpen(newOpen);
   };
 
-  const defaultOption = {
-    loop: true,
-    autoplay: true,
-    animationData: connect,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   const defaultOptions = {
     loop: true,
     autoplay: true,
