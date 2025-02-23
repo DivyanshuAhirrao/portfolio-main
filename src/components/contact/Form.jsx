@@ -1,37 +1,55 @@
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useEffect } from "react";
+import {
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Grid,
+  Box,
+  Container,
+  createTheme,
+  ThemeProvider,
+} from "@mui/material";
+import { useEffect, useState, useCallback } from "react";
+import { formFields } from "../utils/constants";
 
-const defaultTheme = createTheme();
+const theme = createTheme();
 
 export default function Form() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
-
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
   }, []);
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    allowCheckBox: false,
+  });
+
+  const handleChange = useCallback((event) => {
+    const { name, value, type, checked } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  }, []);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted:", formData);
+  };
+
+  const isCheckboxEnabled =
+    formData.firstName.trim() && formData.lastName.trim();
+
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 1,
+            mt: 1,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -44,44 +62,32 @@ export default function Form() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-
+              {formFields.map(({ id, label, autoComplete, required }) => (
+                <Grid item xs={12} key={id}>
+                  <TextField
+                    fullWidth
+                    id={id}
+                    label={label}
+                    name={id}
+                    autoComplete={autoComplete}
+                    required={required}
+                    value={formData[id]}
+                    onChange={handleChange}
+                  />
+                </Grid>
+              ))}
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
+                    <Checkbox
+                      name="allowCheckBox"
+                      color="primary"
+                      checked={formData.allowCheckBox}
+                      onChange={handleChange}
+                      disabled={!isCheckboxEnabled}
+                    />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="I hereby confirm that the information provided is accurate, complete, and belongs to me."
                 />
               </Grid>
             </Grid>
@@ -90,6 +96,7 @@ export default function Form() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              disabled={!formData.allowCheckBox}
             >
               Collaborate
             </Button>

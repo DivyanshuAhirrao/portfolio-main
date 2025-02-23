@@ -12,8 +12,7 @@ const Info = () => {
           onInit={(typewriter) => {
             typewriter
               .typeString("Myself Divyanshu Ahirrao !!")
-              .callFunction(() => {
-              })
+              .callFunction(() => {})
               .pauseFor(2500)
               .deleteAll()
               .callFunction(() => {
@@ -25,15 +24,15 @@ const Info = () => {
       </p>
 
       <p className=" w-[80%] text-justify font-serif text-gray-600 text-[16px]">
-            I am a Enthusiast Software Engineer. I love to explore new technologies
-        and leverage them to solve real-life problems. I am a passionate learner
-        and always ready to learn and work across technologies and domains . I
-        am currently working on my MERN stack skills and exploring new
-        technologies. I am also open to work on any Web Development and Web
-        Design opportunities. Whenever possible, I also apply my passion for
-        developing products with HTML/CSS and Modern Javascript Library and
-        Frameworks like React.js, tailwindCSS, SwiperJS, NodeJS, Cloud
-        Deployment any other services ...
+        I am a passionate Software Engineer with a strong enthusiasm for
+        exploring new technologies to solve real-world problems. A dedicated
+        learner, I thrive in diverse domains and enjoy working across various
+        tech stacks. Currently, I am sharpening my MERN stack skills while
+        expanding my expertise in AWS, TypeScript, and Firebase for
+        authentication and authorization integrations. I am also eager to
+        contribute to Web Development and Web Design projects, utilizing tools
+        like React.js, TailwindCSS, SwiperJS, Node.js, and cloud deployment
+        services to create seamless, efficient, and scalable solutions.
       </p>
     </div>
   );
