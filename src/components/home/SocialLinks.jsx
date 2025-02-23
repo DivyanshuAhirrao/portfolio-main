@@ -1,10 +1,8 @@
-import React from "react";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
-import { Button } from "flowbite-react";
-import cv from "../media/Divyanshu_cv.pdf";
+import cv from "../media/Divyanshu_CV.pdf";
 const SocialLinks = () => {
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/7972814411`;
@@ -34,7 +32,7 @@ const SocialLinks = () => {
               HIRE ME
             </button>
           </a>
-          
+
           <a href={cv} download>
             <button className="py-[7.2px] px-6 border-2 border-gray-800 hover:bg-gray-700 transition-all duration-200 hover:text-gray-200 text-gray-700 rounded-[5px]">
               DOWNLOAD CV
