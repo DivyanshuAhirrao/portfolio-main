@@ -1,11 +1,9 @@
-import React from "react";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Button } from "flowbite-react";
-import cv from "../media/CV_Divyanshu.pdf";
+import cv from "../media/Divyanshu_CV.pdf";
 const SocialLinks = () => {
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/7972814411`;
