@@ -24,15 +24,7 @@ const Info = () => {
       </p>
 
       <p className=" w-[80%] text-justify font-serif text-gray-600 text-[16px]">
-        I am a passionate Software Engineer with a strong enthusiasm for
-        exploring new technologies to solve real-world problems. A dedicated
-        learner, I thrive in diverse domains and enjoy working across various
-        tech stacks. Currently, I am sharpening my MERN stack skills while
-        expanding my expertise in AWS, TypeScript, and Firebase for
-        authentication and authorization integrations. I am also eager to
-        contribute to Web Development and Web Design projects, utilizing tools
-        like React.js, TailwindCSS, SwiperJS, Node.js, and cloud deployment
-        services to create seamless, efficient, and scalable solutions.
+       A results-driven and passionate Software Engineer with hands-on experience in designing, developing, and deploying scalable web applications using Java, Spring Frameworks, and the MERN stack (MongoDB, Express, ReactJS, NodeJS). Adept at building responsive UI/UX with HTML, CSS, TypeScript, and modern JavaScript frameworks, leveraging tools like Tailwind CSS and SwiperJS to deliver high-quality products. Skilled in cloud-based development and deployment, utilizing Docker and AWS for robust infrastructure management. Proactive in continuous learning and cross-domain exploration, with the ability to collaborate across teams, adapt to emerging technologies, and solve complex real-world problems using innovative engineering solutions.
       </p>
     </div>
   );
