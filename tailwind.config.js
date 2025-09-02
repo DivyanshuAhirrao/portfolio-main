@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
+  darkMode: 'class', // Enable dark mode via class strategy
   theme: {
     screens: {
       'xs': '320px', // Extra-small screens

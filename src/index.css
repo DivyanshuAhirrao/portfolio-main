@@ -4,133 +4,131 @@
 @import-normalize;
 @import './reset.css';
 
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Dark mode support for existing animations */
+.dark .blinker {
+  animation: disco-dark 1s infinite;
+}
+
+.dark #txt > b {
+  color: #9ca3af;
+  background: linear-gradient(#6366f1, #8b5cf6, #06b6d4);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes disco-dark {
+  50% {
+    color: rgb(168, 162, 206);
+  }
+}
+
+/* Custom scrollbar for dark mode */
+.dark #custom-scrollbar {
+  background-color: #374151;
+}
+
+.dark #custom-scrollbar::-webkit-scrollbar {
+  width: 0.12px;
+}
+
+/* Ensure smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Original styles */
 #custom-scrollbar ::-webkit-scrollbar {
-    width: 0.12px;
+  width: 0.12px;
 }
-#custom-scrollbar{
+
+#custom-scrollbar {
   background-color: #aaf;
- }
-/* 
-#creative-box{
-   box-shadow: 0px 0px 10px 10px gray;
-} */
-
-.blinker{
-    animation: disco 1s infinite;
 }
 
-
-#txt{
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   flex:1;
-   font-family:sans-serif;
-   letter-spacing:3.5px;
-   font-size:3.5rem;
-   font-weight:700;
-   position:relative;
-   transform-style:preserve-3d;
-   perspective:100px;
-   -webkit-transform-style:preserve-3d;
-   -webkit-perspective:100px;
-}
-#txt>b{
-   height: 3.9rem;
-   box-shadow:0 .55rem .3rem -.3rem #aaa;
-   color:#979c9f;
-   background:linear-gradient(#aaf,#acf,#afc);
-   background-clip:text;
-   text-fill-color:transparent;
-   -webkit-background-clip:text;
-   -webkit-text-fill-color:transparent;
-   transform-origin:bottom;
-   transform:rotateX(-85deg);
-   -webkit-transform-origin:bottom;
-   -webkit-transform:rotateX(-85deg);
-   animation:getUp 7s infinite;
-}
-#txt>b:nth-child(2){
-   animation-delay:.25s;
-}
-#txt>b:nth-child(3){
-   animation-delay:.5s;
-}
-#txt>b:nth-child(4){
-   animation-delay:.75s;
-}
-#txt>b:nth-child(5){
-   animation-delay:1s;
-}
-#txt>b:nth-child(6){
-   animation-delay:1.25s;
-}
-#txt>b:nth-child(7){
-   animation-delay:1.5s;
-}
-#txt>b:nth-child(8){
-   animation-delay:1.75s;
-}
-@keyframes getUp{
-   10%,50%{
-      transform:rotateX(0);
-   }
-   0%,60%,100%{
-      transform:rotateX(-85deg);
-   }
+.blinker {
+  animation: disco 1s infinite;
 }
 
+#txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-family: sans-serif;
+  letter-spacing: 3.5px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 100px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 100px;
+}
 
+#txt > b {
+  height: 3.9rem;
+  box-shadow: 0 .55rem .3rem -.3rem #aaa;
+  color: #979c9f;
+  background: linear-gradient(#aaf, #acf, #afc);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: bottom;
+  transform: rotateX(-85deg);
+  -webkit-transform-origin: bottom;
+  -webkit-transform: rotateX(-85deg);
+  animation: getUp 7s infinite;
+}
+
+#txt > b:nth-child(2) { animation-delay: .25s; }
+#txt > b:nth-child(3) { animation-delay: .5s; }
+#txt > b:nth-child(4) { animation-delay: .75s; }
+#txt > b:nth-child(5) { animation-delay: 1s; }
+#txt > b:nth-child(6) { animation-delay: 1.25s; }
+#txt > b:nth-child(7) { animation-delay: 1.5s; }
+#txt > b:nth-child(8) { animation-delay: 1.75s; }
+
+@keyframes getUp {
+  10%, 50% { transform: rotateX(0); }
+  0%, 60%, 100% { transform: rotateX(-85deg); }
+}
 
 .vignette {
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
- }
-@keyframes creative {
-
-   0%{
-      background-color: black;
-   }
-   25%{
-      background-color: rgb(39, 15, 10);
-   }
-   50%{
-      background-color: rgb(11, 10, 41);
-   }
-   75%{
-      background-color: rgb(9, 48, 28);
-   }
-   100%{
-      background-color: black;
-   }
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
 }
 
+@keyframes creative {
+  0% { background-color: black; }
+  25% { background-color: rgb(39, 15, 10); }
+  50% { background-color: rgb(11, 10, 41); }
+  75% { background-color: rgb(9, 48, 28); }
+  100% { background-color: black; }
+}
 
-.laptop{
-    height: 350px;
-    width: 450px;
-    background-image: url('./components/media/laptop.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;  
-    padding: 0 30px;
+.laptop {
+  height: 350px;
+  width: 450px;
+  background-image: url('./components/media/laptop.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;  
+  padding: 0 30px;
 }
 
 
 @keyframes disco {
-    50%{
-        color: rgb(59, 45, 91);
-    }
+  50% { color: rgb(59, 45, 91); }
 }
