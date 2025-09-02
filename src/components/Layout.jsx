@@ -13,7 +13,7 @@ const Layout = () => {
   }, []);
 
   return (
-    <section className="overflow-x-hidden">
+    <section className="overflow-x-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Navbar />
       <Home />
       <Projects />

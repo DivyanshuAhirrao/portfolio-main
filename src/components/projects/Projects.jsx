@@ -113,13 +113,13 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-[100%] py-12 flex flex-col justify-center items-center"
+      className="w-[100%] py-12 flex flex-col justify-center items-center bg-white dark:bg-gray-900 transition-colors duration-300"
     >
       <Lottie options={defaultOptions} width={300} />
-      <h1 className="w-[80%] xs:text-[40px] text-center text-[5vw] font-mono font-bold opacity-75">
+      <h1 className="w-[80%] xs:text-[40px] text-center text-[5vw] font-mono font-bold opacity-75 text-gray-900 dark:text-gray-100">
         Projects
       </h1>
-      <p className="text-gray-500 text-[16px] w-[70%] text-justify border-b-2 border-dotted py-4 border-emerald-600">
+      <p className="text-gray-500 dark:text-gray-400 text-[16px] w-[70%] text-justify border-b-2 border-dotted py-4 border-emerald-600 dark:border-emerald-400 transition-colors duration-300">
         Here you will find some of the personal and clients projects that I
         created with each project containing its own case study.
       </p>
