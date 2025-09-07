@@ -1,11 +1,14 @@
 import { useEffect } from "react";
+import Lottie from "react-lottie";
+import { motion } from "framer-motion";
+import AOS from "aos";
 import pro from "../media/profile.jpg";
 import Info from "./Info";
 import SocialLinks from "./SocialLinks";
-import Lottie from "react-lottie";
 import hi from "../media/hi.json";
-import AOS from "aos";
 import "aos/dist/aos.css";
+import TextRevealAnimation from "../animation/TextRevealAnimation";
+import MagneticHover from "../animation/MagneticHover";
 
 const Home = () => {
   useEffect(() => {
@@ -22,34 +25,81 @@ const Home = () => {
   };
   return (
     <div
-      data-aos="fade-up"
-      data-aos-duration="2000"
       id="home"
-      className="py-2 flex flex-wrap bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="py-2 flex flex-wrap bg-white dark:bg-gray-900 transition-colors duration-300 min-h-screen relative overflow-hidden"
     >
-      <aside className="xs:w-[100%] sm:min-w-[600px] md:w-[50%] pt-20 h-[100%] flex justify-center items-center">
-        <img
-          src={pro}
-          alt="img"
-          className="blinker xs:hidden sm:block rounded-[50%] h-[25vw] border-2 border-gray-700 dark:border-gray-400"
-        />
-        <div className="xs:block sm:hidden w-[100%] relative bottom-20 xs:h-[32vw]">
-          <aside className="w-[60%]">
-            <img
+      <motion.div
+        className="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-10"
+        animate={{
+          scale: [1, 1.5, 1],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10"
+        animate={{
+          scale: [1.5, 1, 1.5],
+          rotate: [360, 180, 0],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      <aside className="xs:w-[100%] sm:min-w-[600px] md:w-[50%] pt-20 h-[100%] flex justify-center items-center relative z-10">
+        <TextRevealAnimation direction="left" delay={0.2}>
+          <MagneticHover strength={0.2}>
+            <motion.img
               src={pro}
-              alt="imgs"
-              className="scale-75 rounded-[50%] shadow-md shadow-gray-500 dark:shadow-gray-700"
+              alt="img"
+              className="blinker xs:hidden sm:block rounded-[50%] h-[25vw] border-2 border-gray-700 dark:border-gray-400 shadow-2xl"
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+              }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
-          </aside>
-          <aside className="w-[40%] absolute top-5 right-4">
+          </MagneticHover>
+        </TextRevealAnimation>
+        
+        <div className="xs:block sm:hidden w-[100%] relative bottom-20 xs:h-[32vw]">
+          <TextRevealAnimation direction="up" delay={0.1}>
+            <aside className="w-[60%]">
+              <MagneticHover>
+                <img
+                  src={pro}
+                  alt="imgs"
+                  className="scale-75 rounded-[50%] shadow-md shadow-gray-500 dark:shadow-gray-700"
+                />
+              </MagneticHover>
+            </aside>
+          </TextRevealAnimation>
+          <motion.aside 
+            className="w-[40%] absolute top-5 right-4"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+          >
             <Lottie options={defaultOptions} width={170} />
-          </aside>
+          </motion.aside>
         </div>
       </aside>
-      <aside className="xs:w-[100%] sm:min-w-[600px] md:w-[50%] h-[100%] text-center">
+
+      <aside className="xs:w-[100%] sm:min-w-[600px] md:w-[50%] h-[100%] text-center relative z-10">
         <div className="pt-12 flex flex-col gap-2">
-          <Info />
-          <SocialLinks />
+          <TextRevealAnimation direction="right" delay={0.3}>
+            <Info />
+          </TextRevealAnimation>
+          <TextRevealAnimation direction="up" delay={0.5}>
+            <SocialLinks />
+          </TextRevealAnimation>
         </div>
       </aside>
     </div>
