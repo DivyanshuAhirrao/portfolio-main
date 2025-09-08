@@ -9,16 +9,23 @@ import Footer from "./footer/Footer";
 
 const Layout = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 1000, 
+      easing: 'ease-in-out-cubic',
+      once: false,
+      mirror: true,
+    });
   }, []);
 
   return (
     <section className="overflow-x-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Navbar />
-      <Home />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div className="pt-[11vh]"> {/* Added padding for fixed navbar */}
+        <Home />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </section>
   );
 };
