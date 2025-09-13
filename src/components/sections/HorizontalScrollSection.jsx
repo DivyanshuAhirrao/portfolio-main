@@ -32,7 +32,7 @@ const HorizontalScrollSection = () => {
   useEffect(() => {
     const section = sectionRef.current;
     const scrollContainer = scrollContainerRef.current;
-     if (window.innerWidth <= 556) {
+     if (window.innerWidth <= 678) {
       setItemWidth(948);
      }
 

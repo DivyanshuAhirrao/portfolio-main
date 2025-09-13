@@ -20,7 +20,7 @@ const TrainAnimation = () => {
   const trainPosition = scrollProgress * (window.innerHeight - 200); // Adjust based on viewport
 
   return (
-    <div className="fixed left-4 top-12 w-16 h-full z-10 pointer-events-none scale-75">
+    <div className="fixed w-16 h-full z-10 pointer-events-none md:scale-75 sm:scale-[68] xs:scale-[0.6] md:left-4 sm:left-3 xs:-left-0 md:top-12 sm:top-16  xs:top-20">
       {/* Railway Track */}
       <div className="absolute left-4 top-0 w-1 xl:h-[81%] lg:h-[81%] md:h-[82%] sm:h-[85%] xs:h-[84%] bg-gradient-to-b from-gray-400 via-gray-600 to-gray-400"></div>
       <div className="absolute left-3 top-0 w-3 h-full">
