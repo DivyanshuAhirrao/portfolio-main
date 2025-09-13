@@ -17,7 +17,7 @@ const TextArea = () => {
       <Toaster position="top-center"/>
       <div className="max-w-md">
         <div className="mb-2 block flex justify-between">
-          <Label htmlFor="comment" value="Your Precious message : " />
+          <Label className="relative left-6" htmlFor="comment" value="Your Precious message : " />
           <button
             className={`p-[2px] text-blue-600 border-2 border-[#1976D2] w-28 rounded-md transition-all duration-300 font-mono relative bottom-1 ${
               comment
@@ -36,6 +36,7 @@ const TextArea = () => {
           required
           rows={10}
           value={comment}
+          className="scale-90 relative left-2"
           onChange={(e)=> handleCommentChange(e.target.value)}
         />
       </div>
