@@ -198,3 +198,110 @@ html {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Enhanced train animation styles */
+@keyframes train-move {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+.train-moving {
+  animation: train-move 0.3s ease-in-out infinite;
+}
+
+/* Glowing headlight effect */
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px #fbbf24, 0 0 10px #fbbf24, 0 0 15px #fbbf24;
+  }
+  50% { 
+    box-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24, 0 0 30px #fbbf24;
+  }
+}
+
+.headlight-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Horizontal scroll section enhancements */
+.horizontal-scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Parallax elements performance optimization */
+.parallax-element {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Motion path element styling */
+#moving-element {
+  will-change: transform;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+}
+
+/* Enhanced morphing animations */
+[data-morph] {
+  will-change: transform, border-radius;
+  transition: all 0.3s ease-out;
+}
+
+/* Text reveal animations */
+[data-text-reveal] {
+  overflow: hidden;
+}
+
+[data-text-reveal] > * {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Stagger animation elements */
+[data-stagger] {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Smooth scroll enhancements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom cursor for interactive elements */
+.magnetic-hover {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Performance optimizations for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Dark mode specific enhancements */
+.dark .train-track {
+  background: linear-gradient(to bottom, #4b5563, #6b7280, #4b5563);
+}
+
+.dark .train-car {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .train-container {
+    left: 2px;
+    width: 12px;
+  }
+  
+  .horizontal-scroll-cards {
+    width: 300px;
+  }
+}

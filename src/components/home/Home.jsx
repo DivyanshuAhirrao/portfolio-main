@@ -30,6 +30,7 @@ const Home = () => {
     >
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-10"
+        data-parallax="0.3" // NEW: Parallax effect
         animate={{
           scale: [1, 1.5, 1],
           rotate: [0, 180, 360],
@@ -42,6 +43,7 @@ const Home = () => {
       />
       <motion.div
         className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10"
+        data-parallax="0.7" 
         animate={{
           scale: [1.5, 1, 1.5],
           rotate: [360, 180, 0],
@@ -52,7 +54,10 @@ const Home = () => {
           ease: "linear"
         }}
       />
-
+      <div 
+        className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 transform -translate-x-1/2 -translate-y-1/2"
+        data-morph="true"
+      ></div>
       <aside className="xs:w-[100%] sm:min-w-[600px] md:w-[50%] pt-20 h-[100%] flex justify-center items-center relative z-10">
         <TextRevealAnimation direction="left" delay={0.2}>
           <MagneticHover strength={0.2}>

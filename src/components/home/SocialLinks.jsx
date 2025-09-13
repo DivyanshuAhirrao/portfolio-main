@@ -34,10 +34,11 @@ const SocialLinks = () => {
   const resumeVercelLink = 'https://ua30zxjphjwjhfdk.public.blob.vercel-storage.com/divyanshu_swe_resume.pdf';
   return (
     <>
-      <section className="pl-5 xs:pt-4 sm:pt-8">
+      <section className="pl-5 xs:pt-4 sm:pt-8 relative lg:left-0 md:left-0 sm:left-14 xs:left-10">
         <article className="flex gap-4 text-[20px]">
           {socialData.map((link, index) => (
             <a
+              target="_blank"
               key={index}
               href={link.href || undefined}
               onClick={link.onClick || undefined}

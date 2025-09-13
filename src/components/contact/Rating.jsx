@@ -13,7 +13,7 @@ export default function HoverRating() {
   const [hover, setHover] = React.useState(-1);
 
   return (
-    <div className="py-6">
+    <div className="py-6 w-[70%] sm:w-[80%] xs:w-[100%] flex flex-col items-center justify-center">
       <h1> Rate the Experience : </h1>
       <Box
         sx={{
