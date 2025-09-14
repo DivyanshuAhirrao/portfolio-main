@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 
 const TrainAnimation = () => {
   const trainRef = useRef(null);
@@ -9,84 +8,98 @@ const TrainAnimation = () => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollTop / docHeight+0.02;
-      setScrollProgress(progress); // Ensure minimum visibility
+      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const trainPosition = scrollProgress * (window.innerHeight - 200); // Adjust based on viewport
+  // Calculate train position - moves from top to bottom as user scrolls
+  const trainPosition = scrollProgress * (typeof window !== 'undefined' ? window.innerHeight - 120 : 600);
 
   return (
-    <div className="fixed w-16 h-full z-10 pointer-events-none md:scale-75 sm:scale-[68] xs:scale-[0.6] md:left-4 sm:left-3 xs:-left-0 md:top-12 sm:top-16  xs:top-20">
-      {/* Railway Track */}
-      <div className="absolute left-4 top-0 w-1 xl:h-[81%] lg:h-[81%] md:h-[82%] sm:h-[85%] xs:h-[84%] bg-gradient-to-b from-gray-400 via-gray-600 to-gray-400"></div>
-      <div className="absolute left-3 top-0 w-3 h-full">
-        {/* Railway ties */}
-        {Array.from({ length: 28 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-6 h-1 bg-amber-800 left-0"
-            style={{ top: `${i * 3}%`, transform: 'translateX(-25%)' }}
-          ></div>
-        ))}
+    <div className="fixed sm:left-4 xs:left-3 sm:top-11 xs:top-14 w-8 h-full z-50 pointer-events-none scale-90">
+      {/* Modern Railway Track */}
+      <div className="absolute left-3 w-0.5 h-full opacity-70">
+        {/* Main track line with gradient */}
+        <div className="w-full h-full bg-gradient-to-b from-pink-500 via-purple-500 to-pink-500 opacity-80"></div>
+        
+        {/* Glowing effect */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-pink-400 via-purple-400 to-pink-400 blur-sm opacity-40"></div>
       </div>
 
-      {/* Train */}
-      <motion.div
+      {/* Sleek Modern Train */}
+      <div
         ref={trainRef}
-        className="absolute left-0.5 z-40"
+        className="absolute left-0 transition-transform duration-75 ease-out"
         style={{ 
-          top: `${Math.max(0, Math.min(trainPosition, window.innerHeight - 100))}px`,
+          transform: `translateY(${Math.max(0, Math.min(trainPosition, typeof window !== 'undefined' ? window.innerHeight - 100 : 600))}px)`,
         }}
-        animate={{
-          y: scrollProgress > 0 ? 0 : -10,
-        }}
-        transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        {/* Train Body */}
+        {/* Train Container */}
         <div className="relative">
-          {/* Main train car */}
-          <div className="w-8 h-14 bg-gradient-to-r from-red-600 to-red-800 rounded-lg shadow-lg border border-red-900">
-            {/* Windows */}
-            <div className="absolute top-8 left-1 w-2 h-3 bg-blue-200 rounded opacity-70"></div>
-            <div className="absolute top-8 right-1 w-2 h-3 bg-blue-200 rounded opacity-70"></div>
-             <div className="absolute top-3 left-1 w-2 h-3 bg-blue-200 rounded opacity-70"></div>
-            <div className="absolute top-3 right-1 w-2 h-3 bg-blue-200 rounded opacity-70"></div>
+          {/* Main Train Body - Sleek Capsule Design */}
+          <div className="w-7 h-16 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 rounded-full shadow-2xl border border-gray-700 relative overflow-hidden">
             
-            {/* Headlights - Glowing effect */}
-            <div className="absolute -bottom-0 left-1 w-2 h-1 bg-yellow-300 rounded-full shadow-lg animate-pulse"></div>
-            <div className="absolute -bottom-0 right-1 w-2 h-1 bg-yellow-300 rounded-full shadow-lg animate-pulse"></div>
+            {/* Metallic shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-20 transform -skew-y-12 translate-x-full animate-pulse"></div>
             
-            {/* Light beams */}
-            <div className="absolute top-14 left-0.5 w-1 h-8 bg-gradient-to-t from-transparent to-yellow-300 opacity-50 transform -skew-x-12"></div>
-            <div className="absolute top-14 right-0.5 w-1 h-8 bg-gradient-to-t from-transparent to-yellow-300 opacity-50 transform skew-x-12"></div>
+            {/* Front nose cone */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-b from-gray-700 to-gray-800 rounded-full border border-gray-600"></div>
+            
+            {/* Windows - Modern rectangular design */}
+            <div className="absolute top-3 left-0.5 w-6 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-sm opacity-90 shadow-inner"></div>
+            <div className="absolute top-6 left-0.5 w-6 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-sm opacity-90 shadow-inner"></div>
+            <div className="absolute top-9 left-0.5 w-6 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-sm opacity-90 shadow-inner"></div>
+            
+            {/* Side detail lines */}
+            <div className="absolute top-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-60"></div>
+            <div className="absolute bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-60"></div>
+            
+            {/* LED status lights */}
+            <div className="absolute top-12 left-1 w-1 h-1 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
+            <div className="absolute top-12 right-1 w-1 h-1 bg-red-400 rounded-full animate-pulse shadow-lg shadow-red-400/50"></div>
           </div>
           
-          {/* Wheels */}
-          <div className="absolute -top-1 left-1 w-2 h-2 bg-gray-800 rounded-full border border-gray-600"></div>
-          <div className="absolute -top-1 right-1 w-2 h-2 bg-gray-800 rounded-full border border-gray-600"></div>
-          
-          {/* Smoke/Steam effect */}
-          <motion.div
-            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
-            animate={{
-              opacity: scrollProgress > 0.1 ? [0.3, 0.7, 0.3] : 0,
-              scale: scrollProgress > 0.1 ? [1, 1.2, 1] : 0,
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+          {/* Front headlight beam */}
+          <div 
+            className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 transition-opacity duration-300 ${
+              scrollProgress > 0.02 ? 'opacity-70' : 'opacity-30'
+            }`}
           >
-            <div className="w-3 h-3 bg-gray-300 rounded-full opacity-60"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full opacity-40 mt-1 ml-1"></div>
-          </motion.div>
+            <div className="w-8 h-20 bg-gradient-to-b from-yellow-200/60 via-yellow-300/40 to-transparent rounded-full blur-sm"></div>
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-12 bg-gradient-to-b from-white/80 via-yellow-200/60 to-transparent rounded-full"></div>
+          </div>
+          
+          {/* Motion blur effect when moving */}
+          <div 
+            className={`absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent rounded-full transition-opacity duration-200 ${
+              scrollProgress > 0.05 ? 'opacity-40' : 'opacity-0'
+            }`}
+          >
+          </div>
+          
+          {/* Speed particles effect */}
+          {scrollProgress > 0.1 && (
+            <div className="absolute -left-2 top-1/2 transform -translate-y-1/2">
+              {[...Array(3)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-px h-4 bg-gradient-to-b from-purple-400 to-transparent opacity-60"
+                  style={{
+                    left: `${i * 2}px`,
+                    animationDelay: `${i * 0.1}s`,
+                    animation: 'moveLeft 0.3s linear infinite'
+                  }}
+                ></div>
+              ))}
+            </div>
+          )}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

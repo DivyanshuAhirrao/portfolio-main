@@ -285,13 +285,38 @@ html {
   will-change: transform;
 }
 
-/* Dark mode specific enhancements */
-.dark .train-track {
-  background: linear-gradient(to bottom, #4b5563, #6b7280, #4b5563);
+/* Train Animation Styles */
+@keyframes moveLeft {
+  0% { 
+    transform: translateX(0px) translateY(-50%); 
+    opacity: 0; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translateX(-20px) translateY(-50%); 
+    opacity: 0; 
+  }
 }
 
-.dark .train-car {
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+.speed-particle {
+  animation: moveLeft 0.3s linear infinite;
+}
+
+.speed-particle-0 {
+  left: 0px;
+  animation-delay: 0s;
+}
+
+.speed-particle-1 {
+  left: 2px;
+  animation-delay: 0.1s;
+}
+
+.speed-particle-2 {
+  left: 4px;
+  animation-delay: 0.2s;
 }
 
 /* Responsive enhancements */
