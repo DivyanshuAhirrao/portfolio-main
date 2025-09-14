@@ -10,13 +10,13 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -85,11 +85,12 @@ html {
 
 /* Custom scrollbar for dark mode */
 .dark #custom-scrollbar {
+  width: 0px;
   background-color: #374151;
 }
 
 .dark #custom-scrollbar::-webkit-scrollbar {
-  width: 0.12px;
+  width: 0px;
 }
 
 /* Ensure smooth transitions */
@@ -270,7 +271,7 @@ html {
 
 /* Smooth scroll enhancements */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom cursor for interactive elements */
