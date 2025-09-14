@@ -21,9 +21,9 @@ const TrainAnimation = () => {
   const trainPosition = scrollProgress * (typeof window !== 'undefined' ? window.innerHeight - 120 : 600);
 
   return (
-    <div className="fixed sm:left-4 xs:left-3 sm:top-11 xs:top-14 w-8 h-full z-50 pointer-events-none scale-90">
+    <div className="fixed sm:left-4 xs:left-3 sm:top-11 xs:top-14 w-8 h-full z-50 pointer-events-none sm:scale-90 xs:scale-[0.55]">
       {/* Modern Railway Track */}
-      <div className="absolute left-3 w-0.5 h-full opacity-70">
+      <div className="absolute left-3 w-0.5 sm:h-full xs:h-[93%] opacity-70">
         {/* Main track line with gradient */}
         <div className="w-full h-full bg-gradient-to-b from-pink-500 via-purple-500 to-pink-500 opacity-80"></div>
         

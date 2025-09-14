@@ -32,7 +32,7 @@ const ScrollProgressBar = () => {
       
       {/* Circular Progress Indicator */}
       <motion.div
-        className="fixed bottom-8 right-8 w-16 h-16 z-50"
+        className="fixed bottom-8 right-8 w-16 h-16 z-50 sm:block xs:hidden"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ 
           opacity: scrollProgress > 0.1 ? 1 : 0,
