@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Lottie from "react-lottie";
 import { motion } from "framer-motion";
 import AOS from "aos";
-import pro from "../media/profile.jpg";
+import pro from "../media/profile-pic.png";
 import Info from "./Info";
 import SocialLinks from "./SocialLinks";
 import hi from "../media/hi.json";

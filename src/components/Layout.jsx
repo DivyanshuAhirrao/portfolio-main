@@ -1,6 +1,6 @@
 import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, memo } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,7 +11,7 @@ const EnhancedScrollEffects = lazy(() => import("./animation/EnhancedScrollAnima
 const HorizontalScrollSection = lazy(() => import("./sections/HorizontalScrollSection"));
 const ExperienceSection = lazy(() => import("./sections/ExperienceSection"));
 
-const Layout = () => {
+const Layout = memo(() => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -38,6 +38,8 @@ const Layout = () => {
       </EnhancedScrollEffects>
     </Suspense>
   );
-};
+},[]);
+
+Layout.displayName = "Layout";
 
 export default Layout;

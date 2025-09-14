@@ -9,6 +9,7 @@ import card_mobile from "../media/card-mobile_dev.json";
 import card_database from "../media/card-database.json";
 import card_devops from "../media/card_devops.json";
 import card_webdev from "../media/card_webdev.json";
+import card_ai from "../media/card-ai.json";
 import Lottie from "react-lottie";
 
 const ANIMATIONS_FILE_MAP = [
@@ -18,6 +19,7 @@ const ANIMATIONS_FILE_MAP = [
   card_backend,
   card_database,
   card_devops,
+  card_ai,
 ];
 
 gsap.registerPlugin(ScrollTrigger);

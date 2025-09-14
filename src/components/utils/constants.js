@@ -56,48 +56,61 @@ export const EXPERIENCE = [
     },
 ];
 
-export  const HORIZONTAL_DATA = [
-    {
-      id: 1,
-      title: "Web Development",
-      description: "Creating responsive and dynamic web applications using modern frameworks and technologies.",
-      icon: "🌐",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      id: 2,
-      title: "Mobile Apps",
-      description: "Building cross-platform mobile applications with React Native and Flutter.",
-      icon: "📱",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      id: 3,
-      title: "UI/UX Design",
-      description: "Designing intuitive and beautiful user interfaces with focus on user experience.",
-      icon: "🎨",
-      color: "from-green-500 to-teal-500"
-    },
-    {
-      id: 4,
-      title: "Backend Development",
-      description: "Developing robust server-side applications and APIs using Node.js and Python.",
-      icon: "⚙️",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      id: 5,
-      title: "Database Design",
-      description: "Designing efficient database structures and optimizing query performance.",
-      icon: "🗄️",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      id: 6,
-      title: "DevOps & Cloud",
-      description: "Implementing CI/CD pipelines and deploying applications to cloud platforms.",
-      icon: "☁️",
-      color: "from-gray-600 to-gray-800"
-    }
+export const HORIZONTAL_DATA = [
+  {
+    id: 1,
+    title: "Web Development",
+    description:
+      "Creating responsive and dynamic web applications using modern frameworks and technologies.",
+    icon: "🌐",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 2,
+    title: "Mobile Apps",
+    description:
+      "Building cross-platform mobile applications with React Native and Flutter.",
+    icon: "📱",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    id: 3,
+    title: "UI/UX Design",
+    description:
+      "Designing intuitive and beautiful user interfaces with focus on user experience.",
+    icon: "🎨",
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    id: 4,
+    title: "Backend Development",
+    description:
+      "Developing robust server-side applications and APIs using Node.js and Python.",
+    icon: "⚙️",
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    id: 5,
+    title: "Database Design",
+    description:
+      "Designing efficient database structures and optimizing query performance.",
+    icon: "🗄️",
+    color: "from-indigo-500 to-purple-500",
+  },
+  {
+    id: 6,
+    title: "DevOps & Cloud",
+    description:
+      "Implementing CI/CD pipelines and deploying applications to cloud platforms.",
+    icon: "☁️",
+    color: "from-gray-600 to-gray-800",
+  },
+  {
+    id: 7,
+    title: "AI & Machine Learning",
+    description:
+      "Integrating AI-driven features like predictive analytics, NLP, and intelligent automation into projects.",
+    icon: "🤖",
+    color: "from-yellow-500 to-amber-600",
+  },
 ];
-
