@@ -4,6 +4,7 @@ import ParallaxWrapper from "./components/animation/ParallexWrapper";
 import ScrollProgressBar from "./components/animation/ScrollProgressBar"; // NEW IMPORT
 import TrainAnimation from "./components/animation/TrainAnimation";
 import { ThemeProvider } from "./components/context/ThemeContext";
+import SuspenseLoader from "./components/animation/SuspenseLoader";
 const Layout = lazy(() => import("./components/Layout"));
 
 const App = () => {
@@ -11,11 +12,11 @@ const App = () => {
     <ThemeProvider>
       <ScrollBackgroundAnimation />
       <ScrollProgressBar />
-       <TrainAnimation /> 
-       <Suspense fallback={<div className="text-center py-10">Loading…</div>}>
-      <ParallaxWrapper> {/* NEW WRAPPER */}
-        <Layout />
-      </ParallaxWrapper>
+       <Suspense fallback={<SuspenseLoader />}>
+       <TrainAnimation />
+       <ParallaxWrapper>
+         <Layout />
+       </ParallaxWrapper>
       </Suspense>
     </ThemeProvider>
   );
