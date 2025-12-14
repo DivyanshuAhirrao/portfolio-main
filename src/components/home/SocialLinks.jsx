@@ -31,7 +31,7 @@ const SocialLinks = () => {
       hoverClass: "orange-700",
     },
   ];
-  const resumeVercelLink = 'https://ua30zxjphjwjhfdk.public.blob.vercel-storage.com/divyanshu_swe_resume.pdf';
+  const resumeVercelLink = 'https://ua30zxjphjwjhfdk.public.blob.vercel-storage.com/Divyanshu_Full_Stack_Resume.pdf';
   return (
     <>
       <section className="pl-5 xs:pt-4 sm:pt-8 relative lg:left-0 md:left-0 sm:left-14 xs:left-10">
