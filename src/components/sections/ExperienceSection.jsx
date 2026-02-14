@@ -59,7 +59,7 @@ const ExperienceSection = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative"
+      className="py-20 bg-white dark:bg-black transition-colors duration-300 relative"
     >
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-gray-100 transition-colors duration-300">

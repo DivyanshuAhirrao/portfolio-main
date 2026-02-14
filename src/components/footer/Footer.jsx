@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navItems = ["Home", "About", "Portfolio", "Contact"];
   return (
-    <footer className="bg-gray-800 text-gray-300 py-4">
+    <footer className="bg-black text-gray-300 py-4">
       <div className="container mx-auto text-center">
         <nav aria-label="Footer Navigation" className="mt-2">
           {navItems.map((item, index) => (

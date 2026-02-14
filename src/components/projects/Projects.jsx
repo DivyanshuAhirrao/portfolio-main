@@ -113,7 +113,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="w-[100%] py-12 flex flex-col justify-center items-center bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="w-[100%] py-12 flex flex-col justify-center items-center bg-white dark:bg-black transition-colors duration-300"
     >
       <Lottie options={defaultOptions} width={300} />
       <h1 className="w-[80%] xs:text-[40px] text-center text-[5vw] font-mono font-bold opacity-75 text-gray-900 dark:text-gray-100">

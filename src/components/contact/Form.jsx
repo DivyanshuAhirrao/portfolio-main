@@ -129,7 +129,7 @@ export default function Form() {
       <Container 
         component="main" 
         maxWidth="xs"
-        className="bg-white dark:bg-gray-900 transition-colors duration-300"
+        className="bg-white dark:bg-black transition-colors duration-300"
       >
         <CssBaseline />
         <Box

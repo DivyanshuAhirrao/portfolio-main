@@ -1,8 +1,7 @@
 import { lazy, Suspense } from "react";
 import ScrollBackgroundAnimation from "./components/animation/BackgroundAnimation";
 import ParallaxWrapper from "./components/animation/ParallexWrapper";
-import ScrollProgressBar from "./components/animation/ScrollProgressBar"; // NEW IMPORT
-import TrainAnimation from "./components/animation/TrainAnimation";
+import ScrollProgressBar from "./components/animation/ScrollProgressBar";
 import { ThemeProvider } from "./components/context/ThemeContext";
 import SuspenseLoader from "./components/animation/SuspenseLoader";
 const Layout = lazy(() => import("./components/Layout"));
@@ -13,7 +12,6 @@ const App = () => {
       <ScrollBackgroundAnimation />
       <ScrollProgressBar />
        <Suspense fallback={<SuspenseLoader />}>
-       <TrainAnimation />
        <ParallaxWrapper>
          <Layout />
        </ParallaxWrapper>

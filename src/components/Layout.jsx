@@ -1,9 +1,8 @@
-import { useEffect, lazy, Suspense, memo } from "react";
+import { useEffect, lazy,  memo } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
-import SuspenseLoader from "./animation/SuspenseLoader";
 
 const Projects = lazy(() => import("./projects/Projects"));
 const Contact = lazy(() => import("./contact/Contact"));
@@ -23,9 +22,8 @@ const Layout = memo(() => {
   }, []);
 
   return (
-    <Suspense fallback={<SuspenseLoader />}>
       <EnhancedScrollEffects>
-        <section className="overflow-x-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <section className="overflow-x-hidden bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
           <Navbar />
           <div className="pt-[11vh]">
             <Home />
@@ -37,7 +35,6 @@ const Layout = memo(() => {
           </div>
         </section>
       </EnhancedScrollEffects>
-    </Suspense>
   );
 },[]);
 

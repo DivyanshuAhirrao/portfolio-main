@@ -1,4 +1,3 @@
-/* Reset Box Model and Margin */
 *,
 *::before,
 *::after {
@@ -7,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* Reset Typography */
 body,
 h1,
 h2,
@@ -25,16 +23,11 @@ ol {
   line-height: 1;
 }
 
-/* Reset Lists */
 ul,
 ol {
   list-style: none;
 }
 
-/* Reset Links */
 a {
   text-decoration: none;
 }
-
-/* Optional: Additional Resets */
-/* Add additional resets as needed for your project */

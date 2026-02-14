@@ -9,6 +9,7 @@ import hi from "../media/hi.json";
 import "aos/dist/aos.css";
 import TextRevealAnimation from "../animation/TextRevealAnimation";
 import MagneticHover from "../animation/MagneticHover";
+import EntranceAnimation from "../animation/entrance/EntranceAnimation";
 
 const Home = () => {
   useEffect(() => {
@@ -26,8 +27,9 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="py-2 flex flex-wrap bg-white dark:bg-gray-900 transition-colors duration-300 min-h-screen relative overflow-hidden"
+      className="py-2 flex flex-wrap bg-white dark:bg-black transition-colors duration-300 min-h-screen relative overflow-hidden"
     >
+      <EntranceAnimation />
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-10"
         data-parallax="0.3" // NEW: Parallax effect
