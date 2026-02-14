@@ -27,8 +27,8 @@ const Navbar = () => {
     <motion.nav 
       className={`${
         scrolled 
-          ? 'bg-gray-800/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' 
-          : 'bg-gray-800 dark:bg-gray-900'
+          ? 'bg-black/90 dark:bg-black/90 backdrop-blur-md shadow-lg' 
+          : 'bg-black dark:bg-black'
       } text-gray-200 dark:text-gray-100 flex justify-around items-center h-[11vh] w-[100%] transition-all duration-300 fixed top-0 z-40`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

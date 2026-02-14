@@ -1,0 +1,132 @@
+.thought-wrapper {
+  padding: 24px 0;
+  display: flex;
+}
+
+/* Glass Card */
+
+.thought-card {
+  width: 46vw;
+  padding: 30px;
+  border-radius: 24px;
+
+  /* Glass Effect */
+  backdrop-filter: blur(65px);
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 0 40px rgba(0, 140, 255, 0.2),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+/* Shine Reflection */
+
+.thought-card::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shine 6s infinite linear;
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%) rotate(25deg); }
+  to { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Hover Lift */
+
+.thought-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.395);
+}
+
+/* Header */
+
+.tweet-support{
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 40.4vw;
+  font-size: 12px;
+}
+
+.tweet-head {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  right: 20px;
+}
+
+.tweet-head p {
+  font-size: 13px;
+}
+
+.tweet-details{
+  position: relative;
+  right: 12px;
+  bottom: 6px;
+}
+
+/* Text */
+
+.name-text{
+  color: #4faaff !important;
+  font-size: 16px !important;
+  text-align: left;
+  font-weight: 800;
+  text-decoration: overline;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.thought-text {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: justify;
+  position: relative;
+  bottom: 16px;
+}
+
+/* Footer */
+
+.tweet-footer {
+  color: #4faaff;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .thought-card {
+    width: 90%;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thought-wrapper {
+    position: relative;
+    right: 28px;
+    bottom: 28px;
+  }
+  .tweet-support{
+    display: none;
+  }
+}

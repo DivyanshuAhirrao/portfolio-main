@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 /* html {
@@ -20,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  @apply bg-gray-100 dark:bg-black;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -116,7 +117,7 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   letter-spacing: 3.5px;
   font-size: 3.5rem;
   font-weight: 700;
