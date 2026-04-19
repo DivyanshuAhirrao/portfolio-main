@@ -98,7 +98,7 @@ const HorizontalScrollSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden relative"
+      className="min-h-screen bg-white dark:bg-black overflow-hidden relative"
       id="horizontal-section"
     >
       {/* Background particles */}
@@ -106,7 +106,7 @@ const HorizontalScrollSection = () => {
         {Array.from({ length: 40 }).map((_, i) => (
           <motion.div
             key={i}
-            className="particle absolute w-1 h-1 bg-white rounded-full opacity-20"
+            className="particle absolute w-1 h-1 bg-white dark:bg-black rounded-full opacity-20"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`
@@ -132,15 +132,15 @@ const HorizontalScrollSection = () => {
         >
           <div className="flex-shrink-0 w-96 flex items-center justify-center">
             <motion.div
-              className="text-center text-white"
+              className="text-center text-black dark:text-white "
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-6xl font-bold text-black dark:text-white bg-clip-text text-transparent">
                 Areas of Expertise
               </h2>
-              <p className="text-xl text-gray-300 max-w-md">
+              <p className="text-xl text-black dark:text-white max-w-md">
                 Our Offerings, Service Portfolio, Solutions, Capabilities...
               </p>
 
@@ -151,7 +151,7 @@ const HorizontalScrollSection = () => {
             <motion.div
               key={item.id}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="flex-shrink-0 w-80 h-96 p-6 rounded-2xl shadow-2xl backdrop-blur-lg border border-white/10 flex flex-col justify-between will-change-transform"
+              className="flex-shrink-0 w-80 h-96 p-6 rounded-2xl shadow-2xl backdrop-blur-lg border border-black/10 border-white/10 flex flex-col justify-between will-change-transform"
               style={{
                 background: `linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`
               }}
@@ -168,11 +168,11 @@ const HorizontalScrollSection = () => {
                   {item.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -193,7 +193,7 @@ const HorizontalScrollSection = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 md:left-[45%] sm:left-[43%] xs:left-[41%] transform -translate-x-1/2 text-white text-center"
+        className="absolute bottom-8 md:left-[45%] sm:left-[43%] xs:left-[41%] transform -translate-x-1/2 text-black dark:text-white text-center"
         animate={{
           y: [0, -10, 0]
         }}
@@ -202,10 +202,10 @@ const HorizontalScrollSection = () => {
           repeat: Infinity
         }}
       >
-        <div className="text-sm mb-2">Scroll to explore</div>
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full mx-auto relative">
+        <div className="text-sm mb-2 text-black dark:text-white">Scroll to explore</div>
+        <div className="w-6 h-10 border-2 border-black/80 dark:border-white/80 rounded-full mx-auto relative">
           <motion.div
-            className="w-1 h-2 bg-white rounded-full absolute left-[43%] top-2 transform -translate-x-1/2"
+            className="w-1 h-2 bg-black dark:bg-white rounded-full absolute left-[43%] top-2 transform -translate-x-1/2"
             animate={{
               y: [0, 16, 0]
             }}

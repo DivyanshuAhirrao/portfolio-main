@@ -7,8 +7,12 @@ import Home from "./home/Home";
 const Projects = lazy(() => import("./projects/Projects"));
 const Contact = lazy(() => import("./contact/Contact"));
 const Footer = lazy(() => import("./footer/Footer"));
-const EnhancedScrollEffects = lazy(() => import("./animation/EnhancedScrollAnimation"));
-const HorizontalScrollSection = lazy(() => import("./sections/HorizontalScrollSection"));
+const EnhancedScrollEffects = lazy(
+  () => import("./animation/EnhancedScrollAnimation"),
+);
+const HorizontalScrollSection = lazy(
+  () => import("./sections/HorizontalScrollSection"),
+);
 const ExperienceSection = lazy(() => import("./sections/ExperienceSection"));
 
 const Layout = memo(() => {
@@ -36,7 +40,7 @@ const Layout = memo(() => {
         </section>
       </EnhancedScrollEffects>
   );
-},[]);
+}, []);
 
 Layout.displayName = "Layout";
 
