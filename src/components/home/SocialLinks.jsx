@@ -31,6 +31,9 @@ const SocialLinks = () => {
       hoverClass: "orange-700",
     },
   ];
+  const handleCvClick = () => {
+    alert("Acknowledge through mail !!")
+  }
   const resumeVercelLink = 'https://ua30zxjphjwjhfdk.public.blob.vercel-storage.com/Divyanshu_Full_Stack_Resume.pdf';
   return (
     <>
@@ -56,11 +59,10 @@ const SocialLinks = () => {
             </button>
           </a>
 
-          <a href={resumeVercelLink} download target="_blank">
-            <button className="py-[7.2px] px-6 border-2 border-gray-800 hover:bg-gray-700 transition-all duration-200 hover:text-gray-200 text-gray-700 rounded-[5px]">
+            <button onClick={handleCvClick} className="py-[7.2px] px-6 border-2 border-gray-800 hover:bg-gray-700 transition-all duration-200 hover:text-gray-200 text-gray-700 rounded-[5px]">
               DOWNLOAD CV
             </button>
-          </a>
+
         </article>
       </section>
     </>
