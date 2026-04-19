@@ -11,9 +11,9 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+}
 
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {

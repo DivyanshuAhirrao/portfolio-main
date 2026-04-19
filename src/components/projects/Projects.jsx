@@ -130,7 +130,11 @@ const Projects = () => {
           title={e.title}
           description={e.description}
           link={e.link}
-          flexPosition={index % 2 == 0 ? "flex-wrap" : "xl:flex-row-reverse sm:flex-wrap xs:flex-wrap"}
+          flexPosition={
+            index % 2 == 0
+              ? "flex-wrap"
+              : "xl:flex-row-reverse sm:flex-wrap xs:flex-wrap"
+          }
           aosEffect={e.aosAnimation}
         />
       ))}

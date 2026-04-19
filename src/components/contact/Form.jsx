@@ -32,42 +32,42 @@ export default function Form() {
     () =>
       createTheme({
         palette: {
-          mode: isDark ? 'dark' : 'light',
+          mode: isDark ? "dark" : "light",
           primary: {
-            main: isDark ? '#60a5fa' : '#3b82f6', // Blue colors
+            main: isDark ? "#60a5fa" : "#3b82f6", // Blue colors
           },
           secondary: {
-            main: isDark ? '#34d399' : '#10b981', // Green colors
+            main: isDark ? "#34d399" : "#10b981", // Green colors
           },
           background: {
-            default: isDark ? '#111827' : '#ffffff',
-            paper: isDark ? '#1f2937' : '#ffffff',
+            default: isDark ? "#111827" : "#ffffff",
+            paper: isDark ? "#1f2937" : "#ffffff",
           },
           text: {
-            primary: isDark ? '#f9fafb' : '#111827',
-            secondary: isDark ? '#d1d5db' : '#6b7280',
+            primary: isDark ? "#f9fafb" : "#111827",
+            secondary: isDark ? "#d1d5db" : "#6b7280",
           },
         },
         components: {
           MuiTextField: {
             styleOverrides: {
               root: {
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: isDark ? '#4b5563' : '#d1d5db',
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: isDark ? "#4b5563" : "#d1d5db",
                   },
-                  '&:hover fieldset': {
-                    borderColor: isDark ? '#6b7280' : '#9ca3af',
+                  "&:hover fieldset": {
+                    borderColor: isDark ? "#6b7280" : "#9ca3af",
                   },
-                  '&.Mui-focused fieldset': {
-                    borderColor: isDark ? '#60a5fa' : '#3b82f6',
+                  "&.Mui-focused fieldset": {
+                    borderColor: isDark ? "#60a5fa" : "#3b82f6",
                   },
                 },
-                '& .MuiInputLabel-root': {
-                  color: isDark ? '#d1d5db' : '#6b7280',
+                "& .MuiInputLabel-root": {
+                  color: isDark ? "#d1d5db" : "#6b7280",
                 },
-                '& .MuiInputBase-input': {
-                  color: isDark ? '#f9fafb' : '#111827',
+                "& .MuiInputBase-input": {
+                  color: isDark ? "#f9fafb" : "#111827",
                 },
               },
             },
@@ -75,13 +75,13 @@ export default function Form() {
           MuiButton: {
             styleOverrides: {
               contained: {
-                background: isDark 
-                  ? 'linear-gradient(45deg, #3b82f6 30%, #1d4ed8 90%)'
-                  : 'linear-gradient(45deg, #3b82f6 30%, #1e40af 90%)',
-                '&:hover': {
-                  background: isDark 
-                    ? 'linear-gradient(45deg, #2563eb 30%, #1e40af 90%)'
-                    : 'linear-gradient(45deg, #2563eb 30%, #1d4ed8 90%)',
+                background: isDark
+                  ? "linear-gradient(45deg, #3b82f6 30%, #1d4ed8 90%)"
+                  : "linear-gradient(45deg, #3b82f6 30%, #1e40af 90%)",
+                "&:hover": {
+                  background: isDark
+                    ? "linear-gradient(45deg, #2563eb 30%, #1e40af 90%)"
+                    : "linear-gradient(45deg, #2563eb 30%, #1d4ed8 90%)",
                 },
               },
             },
@@ -89,9 +89,9 @@ export default function Form() {
           MuiCheckbox: {
             styleOverrides: {
               root: {
-                color: isDark ? '#9ca3af' : '#6b7280',
-                '&.Mui-checked': {
-                  color: isDark ? '#60a5fa' : '#3b82f6',
+                color: isDark ? "#9ca3af" : "#6b7280",
+                "&.Mui-checked": {
+                  color: isDark ? "#60a5fa" : "#3b82f6",
                 },
               },
             },
@@ -99,13 +99,13 @@ export default function Form() {
           MuiFormControlLabel: {
             styleOverrides: {
               label: {
-                color: isDark ? '#d1d5db' : '#374151',
+                color: isDark ? "#d1d5db" : "#374151",
               },
             },
           },
         },
       }),
-    [isDark]
+    [isDark],
   );
 
   const handleChange = useCallback((event) => {
@@ -126,8 +126,8 @@ export default function Form() {
 
   return (
     <ThemeProvider theme={muiTheme}>
-      <Container 
-        component="main" 
+      <Container
+        component="main"
         maxWidth="xs"
         className="bg-white dark:bg-black transition-colors duration-300"
       >
@@ -138,7 +138,7 @@ export default function Form() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            backgroundColor: 'transparent',
+            backgroundColor: "transparent",
           }}
         >
           <Box

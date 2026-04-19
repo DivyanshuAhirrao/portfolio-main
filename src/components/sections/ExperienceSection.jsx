@@ -24,7 +24,7 @@ const ExperienceSection = () => {
           start: "top 60%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     itemRefs.current.forEach((item, index) => {
@@ -45,7 +45,7 @@ const ExperienceSection = () => {
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
     });
@@ -91,7 +91,9 @@ const ExperienceSection = () => {
                       <p className="text-gray-500 dark:text-gray-400">
                         {exp.period}
                       </p>
-                      <p className="mt-2 lg:block sm:block xl:block xs:hidden">{exp.description}</p>
+                      <p className="mt-2 lg:block sm:block xl:block xs:hidden">
+                        {exp.description}
+                      </p>
                     </div>
                     <div className="w-4 h-4 bg-emerald-600 dark:bg-emerald-400 rounded-full relative z-10 transition-colors duration-300"></div>
                     <div className="w-1/2 pl-8"></div>
@@ -108,7 +110,9 @@ const ExperienceSection = () => {
                       <p className="text-gray-500 dark:text-gray-400">
                         {exp.period}
                       </p>
-                      <p className="mt-2 lg:block sm:block xl:block xs:hidden">{exp.description}</p>
+                      <p className="mt-2 lg:block sm:block xl:block xs:hidden">
+                        {exp.description}
+                      </p>
                     </div>
                   </>
                 )}

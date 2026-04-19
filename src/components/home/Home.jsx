@@ -40,12 +40,12 @@ const Home = () => {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear"
+          ease: "linear",
         }}
       />
       <motion.div
         className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10"
-        data-parallax="0.7" 
+        data-parallax="0.7"
         animate={{
           scale: [1.5, 1, 1.5],
           rotate: [360, 180, 0],
@@ -53,10 +53,10 @@ const Home = () => {
         transition={{
           duration: 25,
           repeat: Infinity,
-          ease: "linear"
+          ease: "linear",
         }}
       />
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 transform -translate-x-1/2 -translate-y-1/2"
         data-morph="true"
       ></div>
@@ -67,15 +67,15 @@ const Home = () => {
               src={pro}
               alt="img"
               className="blinker xs:hidden sm:block rounded-[50%] h-[25vw] border-2 border-gray-700 dark:border-gray-400 shadow-2xl"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
               }}
               transition={{ type: "spring", stiffness: 300 }}
             />
           </MagneticHover>
         </TextRevealAnimation>
-        
+
         <div className="xs:block sm:hidden w-[100%] relative bottom-20 xs:h-[32vw]">
           <TextRevealAnimation direction="up" delay={0.1}>
             <aside className="w-[60%]">
@@ -88,7 +88,7 @@ const Home = () => {
               </MagneticHover>
             </aside>
           </TextRevealAnimation>
-          <motion.aside 
+          <motion.aside
             className="w-[40%] absolute top-5 right-4"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
