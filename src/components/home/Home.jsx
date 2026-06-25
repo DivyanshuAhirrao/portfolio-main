@@ -1,20 +1,14 @@
-import { useEffect } from "react";
 import Lottie from "react-lottie";
 import { motion } from "framer-motion";
-import AOS from "aos";
 import pro from "../media/profile-pic.png";
 import Info from "./Info";
 import SocialLinks from "./SocialLinks";
 import hi from "../media/hi.json";
-import "aos/dist/aos.css";
 import TextRevealAnimation from "../animation/TextRevealAnimation";
 import MagneticHover from "../animation/MagneticHover";
 import EntranceAnimation from "../animation/entrance/EntranceAnimation";
 
 const Home = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const defaultOptions = {
     loop: true,
@@ -65,7 +59,7 @@ const Home = () => {
           <MagneticHover strength={0.2}>
             <motion.img
               src={pro}
-              alt="img"
+              alt="Divyanshu Ahirrao"
               className="blinker xs:hidden sm:block rounded-[50%] h-[25vw] border-2 border-gray-700 dark:border-gray-400 shadow-2xl"
               whileHover={{
                 scale: 1.1,
@@ -82,7 +76,7 @@ const Home = () => {
               <MagneticHover>
                 <img
                   src={pro}
-                  alt="imgs"
+                  alt="Divyanshu Ahirrao"
                   className="scale-75 rounded-[50%] shadow-md shadow-gray-500 dark:shadow-gray-700"
                 />
               </MagneticHover>

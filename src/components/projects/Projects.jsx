@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import img1 from "../media/laptop-portfolio.png";
 import img2 from "../media/l-shopper.png";
 import img3 from "../media/l-delauxia.png";
@@ -7,8 +6,6 @@ import img5 from "../media/l-roamingo.png";
 
 import Lottie from "react-lottie";
 import projects from "../media/project.json";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import ProjectTile from "./ProjectTile";
 
 const projectsData = [
@@ -98,10 +95,6 @@ const projectsData = [
 ];
 
 const Projects = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   const defaultOptions = {
     loop: true,
     autoplay: true,

@@ -118,7 +118,6 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted:", formData);
   };
 
   const isCheckboxEnabled =

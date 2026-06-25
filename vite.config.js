@@ -11,7 +11,6 @@ export default defineConfig({
           vendor: [
             "react",
             "react-dom",
-            "react-router-dom",
           ],
           motion: ["framer-motion"],
           icons: ["react-icons"],

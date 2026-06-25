@@ -35,7 +35,7 @@ const HorizontalScrollSection = () => {
     const section = sectionRef.current;
     const scrollContainer = scrollContainerRef.current;
      if (window.innerWidth <= 678) {
-      setItemWidth(948);
+      setItemWidth(320);
      }
 
     if (section && scrollContainer) {
@@ -137,7 +137,7 @@ const HorizontalScrollSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-6xl font-bold text-black dark:text-white bg-clip-text text-transparent">
+              <h2 className="text-6xl font-bold text-black dark:text-white">
                 Areas of Expertise
               </h2>
               <p className="text-xl text-black dark:text-white max-w-md">

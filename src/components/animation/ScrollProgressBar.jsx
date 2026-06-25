@@ -1,19 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ScrollProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const rafRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      setScrollProgress(scrollPercent);
+      // Gate updates to one per animation frame to avoid 60+ setState/s
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        setScrollProgress(scrollTop / docHeight);
+        rafRef.current = null;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
@@ -29,12 +37,12 @@ const ScrollProgressBar = () => {
         animate={{ scaleX: scrollProgress }}
         transition={{ type: 'spring', stiffness: 400, damping: 40 }}
       />
-      
+
       {/* Circular Progress Indicator */}
       <motion.div
         className="fixed bottom-8 right-8 w-16 h-16 z-50 sm:block xs:hidden"
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ 
+        animate={{
           opacity: scrollProgress > 0.1 ? 1 : 0,
           scale: scrollProgress > 0.1 ? 1 : 0,
         }}
