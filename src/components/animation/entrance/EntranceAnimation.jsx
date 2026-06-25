@@ -84,21 +84,22 @@ const EntranceAnimation = ({ onComplete, children, shouldShow = true }) => {
           stagger: 0.05,
           ease: 'power2.in'
         }, '-=0.6')
-        // Overlay slides away
+        // Overlay slides away — disable pointer-events the moment it leaves the screen
+        // so underlying buttons are immediately clickable during the fade-out
         .to(overlayRef.current, {
           yPercent: -100,
-          duration:0.6,
-          ease: 'power4.inOut'
-        }, '-=0.3')
-        // Final fade
-        .to(containerRef.current, {
-          opacity: 0,
-          duration: 2,
+          duration: 0.6,
+          ease: 'power4.inOut',
           onComplete: () => {
             if (containerRef.current) {
               containerRef.current.style.pointerEvents = 'none';
             }
           }
+        }, '-=0.3')
+        // Final fade (container is already non-blocking)
+        .to(containerRef.current, {
+          opacity: 0,
+          duration: 2,
         });
     }, containerRef);
 
