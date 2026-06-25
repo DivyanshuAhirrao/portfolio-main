@@ -1,14 +1,8 @@
-import { useEffect } from "react";
 import Form from "./Form";
 import TextArea from "./TextArea";
 import HoverRating from "./Rating";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Contact = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <section
       id="contacts"

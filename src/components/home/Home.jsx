@@ -1,20 +1,14 @@
-import { useEffect } from "react";
 import Lottie from "react-lottie";
 import { motion } from "framer-motion";
-import AOS from "aos";
 import pro from "../media/profile-pic.png";
 import Info from "./Info";
 import SocialLinks from "./SocialLinks";
 import hi from "../media/hi.json";
-import "aos/dist/aos.css";
 import TextRevealAnimation from "../animation/TextRevealAnimation";
 import MagneticHover from "../animation/MagneticHover";
 import EntranceAnimation from "../animation/entrance/EntranceAnimation";
 
 const Home = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const defaultOptions = {
     loop: true,
