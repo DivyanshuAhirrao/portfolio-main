@@ -64,11 +64,12 @@ const ParallaxWrapper = ({ children }) => {
         />
       </svg>
       
-      {/* Moving Element */}
+      {/* Moving Element — decorative only, must not intercept clicks */}
       <div
         id="moving-element"
+        aria-hidden="true"
         className="fixed w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"
-        style={{ zIndex: 10 }}
+        style={{ zIndex: 10, pointerEvents: 'none' }}
       >
         <div className="w-full h-full bg-white rounded-full animate-pulse opacity-50"></div>
       </div>

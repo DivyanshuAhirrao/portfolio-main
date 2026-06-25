@@ -75,18 +75,21 @@ const EnhancedScrollEffects = ({ children }) => {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Floating background elements with parallax */}
+      {/* Floating background elements with parallax — decorative only */}
       <motion.div
+        aria-hidden="true"
         className="fixed top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"
-        style={{ y: y1, rotate }}
+        style={{ y: y1, rotate, pointerEvents: 'none' }}
       />
       <motion.div
+        aria-hidden="true"
         className="fixed top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-pink-400/20 to-yellow-400/20 rounded-full blur-xl"
-        style={{ y: y2, scale }}
+        style={{ y: y2, scale, pointerEvents: 'none' }}
       />
       <motion.div
+        aria-hidden="true"
         className="fixed bottom-1/3 left-1/4 w-40 h-40 bg-gradient-to-br from-green-400/20 to-teal-400/20 rounded-full blur-xl"
-        style={{ y: y3 }}
+        style={{ y: y3, pointerEvents: 'none' }}
       />
 
       {/* Animated grid background */}
