@@ -65,7 +65,7 @@ const Home = () => {
           <MagneticHover strength={0.2}>
             <motion.img
               src={pro}
-              alt="img"
+              alt="Divyanshu Ahirrao"
               className="blinker xs:hidden sm:block rounded-[50%] h-[25vw] border-2 border-gray-700 dark:border-gray-400 shadow-2xl"
               whileHover={{
                 scale: 1.1,
@@ -82,7 +82,7 @@ const Home = () => {
               <MagneticHover>
                 <img
                   src={pro}
-                  alt="imgs"
+                  alt="Divyanshu Ahirrao"
                   className="scale-75 rounded-[50%] shadow-md shadow-gray-500 dark:shadow-gray-700"
                 />
               </MagneticHover>

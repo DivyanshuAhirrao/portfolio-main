@@ -44,7 +44,7 @@ const NavAvatar = () => {
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           variant="dot"
         >
-          <Avatar alt="Remy Sharp" src={logo} /> 
+          <Avatar alt="Divyanshu Ahirrao" src={logo} />
         </StyledBadge>
       </Stack>
     </div>

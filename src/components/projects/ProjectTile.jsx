@@ -1,8 +1,6 @@
 import ViewButton from "./ViewButton";
 
-/* eslint-disable react/prop-types */
 const ProjectTile = ({
-  key,
   imgSrc,
   title,
   description,
@@ -11,7 +9,7 @@ const ProjectTile = ({
   aosDuration = '1000',
   flexPosition
 }) => {
-    
+
   return (
     <section
       data-aos={aosEffect}
@@ -22,7 +20,8 @@ const ProjectTile = ({
         <div className="laptop">
           <img
             src={imgSrc}
-            alt={`thumnail+${key}`}
+            alt={`${title} project screenshot`}
+            loading="lazy"
             className="scale-[0.925] scale-y-[1] relative top-[98px] right-[0.05px]"
           />
         </div>

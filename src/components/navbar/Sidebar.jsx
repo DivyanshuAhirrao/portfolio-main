@@ -106,8 +106,8 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)} sx={{ color: "white" }}>
-        <MenuOpenIcon />
+      <Button onClick={toggleDrawer(true)} aria-label="Open navigation menu" sx={{ color: "white" }}>
+        <MenuOpenIcon aria-hidden="true" />
       </Button>
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
         <div className="h-[100vh] flex flex-col justify-between">
