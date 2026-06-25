@@ -31,8 +31,6 @@ export default function FormDialog() {
           onSubmit: (event) => {
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            formJson.email;
             handleClose();
           },
         }}

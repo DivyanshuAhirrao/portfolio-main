@@ -19,7 +19,7 @@ export default function RotatingTitle({ interval = 3000 }) {
   }, [interval]);
 
   return (
-    <div style={{ position: "relative", height: "24px", color:" #888", fontSize:"14px", textAlign:"left"}}>
+    <div style={{ position: "relative", height: "24px", color: "#888", fontSize:"14px", textAlign:"left"}}>
       <AnimatePresence mode="wait">
         <motion.span
           key={titles[index]}
