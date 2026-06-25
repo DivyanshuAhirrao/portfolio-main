@@ -30,7 +30,6 @@ export default function FormDialog() {
           component: "form",
           onSubmit: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.currentTarget);
             handleClose();
           },
         }}
